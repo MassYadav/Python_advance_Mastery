@@ -67,18 +67,38 @@
 # r.close()
 
 
-class Factory:
-    def __init__(self,material,zips,pockets):
-        self.material = material
-        self.zips = zips
-        self.pockets = pockets
-    def show(self) :
-        print(f"material: {self.material}, zips: {self.zips}, pockets: {self.pockets}")        
+# class Factory:
+#     def __init__(self,material,zips,pockets):
+#         self.material = material
+#         self.zips = zips
+#         self.pockets = pockets
+#     def show(self) :
+#         print(f"material: {self.material}, zips: {self.zips}, pockets: {self.pockets}")        
    
 
-reebok = Factory("leather",2,4)    
-campus = Factory("canvas",1,2)
-print(reebok.material)
-reebok.show()
-print(campus.pockets)
-campus.show()
+# reebok = Factory("leather",2,4)    
+# campus = Factory("canvas",1,2)
+# print(reebok.material)
+# reebok.show()
+# print(campus.pockets)
+# campus.show()
+
+class Animal:
+    name = "lion"
+    def __init__(self,age):
+        self.age = age
+    def show(self): # instance method
+        print("how are you doing?")
+        print(f"name: {self.name}, age: {self.age}") 
+    @classmethod
+    def hello(cls):
+        print("hello i am a class method")
+        print(f"name: {cls.name}") 
+    @staticmethod
+    def static():
+        print("hi i am a static method")          
+
+obj = Animal(5)
+obj.show()
+Animal.hello()
+Animal.static()
