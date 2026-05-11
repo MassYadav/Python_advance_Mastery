@@ -1,4 +1,5 @@
 from pathlib import Path
+import os 
 def readfilefolder():
     path = Path('')
     items = list(path.glob('*'))
@@ -63,6 +64,18 @@ def updatefile():
     except Exception as err:
         print(f"Error: {err}")                 
 
+def deletefile():
+    try:
+        readfilefolder()
+        filename = input("Enter the file name you want to delete: ")
+        p = Path(filename)
+        if p.exists() and p.is_file():
+            os.remove(p)
+            print(f"{filename} deleted successfully")
+        else:
+            print(f"File {filename} does not exist.")
+    except Exception as err:
+        print(f"Error: {err}")        
 
 
 print("press 1 for create a file")
@@ -77,4 +90,6 @@ if check == 1:
 if check == 2:
     readfile()
 if check == 3:
-   updatefile()  
+   updatefile() 
+if check == 4:
+    deletefile()    
