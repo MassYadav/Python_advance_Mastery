@@ -62,6 +62,23 @@
 # p = open(r"basic.py", "r")
 # print(p.read())
 
-r = open("batman.txt","a")
-r.write("i am batman demon")
-r.close()
+# r = open("batman.txt","a")
+# r.write("i am batman demon")
+# r.close()
+
+
+class Factory:
+    def __init__(self,material,zips,pockets):
+        self.material = material
+        self.zips = zips
+        self.pockets = pockets
+    def show(self) :
+        print(f"material: {self.material}, zips: {self.zips}, pockets: {self.pockets}")        
+   
+
+reebok = Factory("leather",2,4)    
+campus = Factory("canvas",1,2)
+print(reebok.material)
+reebok.show()
+print(campus.pockets)
+campus.show()
